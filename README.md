@@ -138,20 +138,57 @@ erDiagram
   POKEMONS }o--o{ TYPES : ""
   TEAMS }o--o{ POKEMONS : ""
 
-  USERS { bigint id PK; string name; string email UK; string password; string role }
-  POKEMONS { bigint id PK; string name UK; integer pokedex_number UK; text description; integer hp; integer attack; integer defense; integer special_attack; integer special_defense; integer speed; decimal height; decimal weight; integer generation; string sprite_url }
-  TYPES { bigint id PK; string name UK; string color }
-  TEAMS { bigint id PK; string name; text description; bigint user_id FK }
-  FAVORITES { bigint id PK; bigint user_id FK; bigint pokemon_id FK }
-  POKEMON_TYPE { bigint id PK; bigint pokemon_id FK; bigint type_id FK }
-  POKEMON_TEAM { bigint id PK; bigint pokemon_id FK; bigint team_id FK; integer position; string nickname }
-
-  POKEMON_TYPE }o--|| POKEMONS : ""
-  POKEMON_TYPE }o--|| TYPES : ""
-  POKEMON_TEAM }o--|| TEAMS : ""
-  POKEMON_TEAM }o--|| POKEMONS : ""
-  FAVORITES }o--|| USERS : ""
-  FAVORITES }o--|| POKEMONS : ""
+  USERS {
+    bigint id PK
+    string name
+    string email UK
+    string password
+    string role
+  }
+  POKEMONS {
+    bigint id PK
+    string name UK
+    integer pokedex_number UK
+    text description
+    integer hp
+    integer attack
+    integer defense
+    integer special_attack
+    integer special_defense
+    integer speed
+    decimal height
+    decimal weight
+    integer generation
+    string sprite_url
+  }
+  TYPES {
+    bigint id PK
+    string name UK
+    string color
+  }
+  TEAMS {
+    bigint id PK
+    string name
+    text description
+    bigint user_id FK
+  }
+  FAVORITES {
+    bigint id PK
+    bigint user_id FK
+    bigint pokemon_id FK
+  }
+  POKEMON_TYPE {
+    bigint id PK
+    bigint pokemon_id FK
+    bigint type_id FK
+  }
+  POKEMON_TEAM {
+    bigint id PK
+    bigint pokemon_id FK
+    bigint team_id FK
+    integer position
+    string nickname
+  }
 ```
 
 ## 🛠️ Stack technique
